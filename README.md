@@ -60,6 +60,9 @@ name can be matched. The items that don’t match an artist or band name after s
 - Convert the RDD to a DataFrame with appropriate schema. This DataFrame can be used to perform complex aggregations using SQL like syntax with the benifit of optimizations that the "Catalyst optimizer" and "Tungsten execution engine" of Apache Spark provide out of the box. 
 - Store the resultant DataFrame as parquet files partitioned by "Date" at the top level and "Artist/Band name" in the second level(Optional). The partitioning strategy can be decided based based on the heuristics of the input dataset like Number of distinct Artist/Bands, Average number of records per a given timeframe etc. The parition strategy must be carefully chosen to optimize for small files problem, query pattern on the resultant dataset and data rentention policies. 
 
+### Advantages of this Solution
+- The hybrid approach of using RDD's and DataFrame gives the flexibility to work at a granular level for unstructured and structured datasets.
+
 ## How to Run the App
 
 - **Building from source**
